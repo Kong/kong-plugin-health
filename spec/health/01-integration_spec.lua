@@ -54,7 +54,7 @@ for _, strategy in helpers.all_strategies() do if strategy ~= "cassandra" then
       }
 
       -- case 3: service.host is an unhealthy  upstream
-      local upstream3 = bp.upstreams:insert({
+      bp.upstreams:insert({
         name = "upstream3",
       })
       -- no target added, which makes it unhealthy
