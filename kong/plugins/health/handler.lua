@@ -1,5 +1,5 @@
 local plugin = {
-  PRIORITY = 1000, -- TODO: set proper priority
+  PRIORITY = 2400, -- after bot-detection, before auth plugins
   VERSION = "0.1",
 }
 

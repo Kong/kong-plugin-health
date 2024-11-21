@@ -38,4 +38,8 @@ Good to know:
 Changelog
 =========
 
+### 0.2.0 released 21-Nov-2024
+
+- change priority to 2400, to run right after `bot-detection`, before any auth plugins. Such that health checks can be done unauthenticated.
+
 ### 0.1.0 initial release
