@@ -9,6 +9,15 @@ Kong plugin to expose `upstream` health as an endpoint.
 
 The status of Kong health-checks is exposed through the status-api. But this is only for internal users to consume. This plugin can be used to expose the health of a loadbalancer (`upstream` entity) on an endpoint to Kong clients.
 
+Why not expose the admin-api endpoint through Kong?
+
+- it requires the admin-status api to be enabled
+- forwarding an external route to the admin-api endpoint would increase the attack surface, since it opens an internal port for external traffic
+- it would require the development team (creating the Kong config) to know infrastructure details (port on which the api is available), and those details to be the same for each Kong node in the cluster. Using this plugin enables the full functionality to be enabled by the development team without any knowledge of the infrastructure
+
+Usage
+=====
+
 To enable the plugin, create a route, for example on path `"/healthcheck"`. Then configure the plugin on this path.
 
 When invoked the plugin will;
@@ -26,3 +35,7 @@ Good to know:
 - it will return a 500 (and log an error) if the `route` doesn't have a `service`
 - it will return a 500 (and log an error) if the `host` doesn't refer to an `upstream`
 
+Changelog
+=========
+
+### 0.1.0 initial release
