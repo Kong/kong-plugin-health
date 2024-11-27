@@ -7,7 +7,6 @@ local plugin = {
 local balancers = require "kong.runloop.balancer.balancers"
 
 
-
 -- return 200 Ok, 503 Service Unavailable, 500 Internal Server Error
 function plugin:access(conf)
 
