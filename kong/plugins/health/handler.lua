@@ -3,6 +3,7 @@ local plugin = {
   VERSION = "0.1",
 }
 
+
 local balancers = require "kong.runloop.balancer.balancers"
 
 
@@ -33,6 +34,7 @@ function plugin:access(conf)
     return kong.response.exit(503, { message = "service is unhealthy" })
   end
 end
+
 
 
 return plugin
