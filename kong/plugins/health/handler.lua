@@ -3,7 +3,9 @@ local plugin = {
   VERSION = "0.1",
 }
 
+
 local balancers = require "kong.runloop.balancer.balancers"
+
 
 
 -- return 200 Ok, 503 Service Unavailable, 500 Internal Server Error
@@ -33,6 +35,7 @@ function plugin:access(conf)
     return kong.response.exit(503, { message = "service is unhealthy" })
   end
 end
+
 
 
 return plugin
